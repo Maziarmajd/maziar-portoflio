@@ -52,6 +52,15 @@ export default function Profile() {
                 </span>
               </span>
             </div>
+            <div className="profile-optins">
+                <button className="btn primary-btn">
+                    {""}
+                    Hire Me{" "}
+                </button>
+                <a href="MaziarMajdCV.pdf" download="MaziarMajdCV.pdf">
+                <button className="btn highlighted-btn">Get My CV</button>
+                </a>
+            </div>
           </div>
         </div>
       </div>
