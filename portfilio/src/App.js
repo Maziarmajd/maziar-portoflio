@@ -1,11 +1,13 @@
-import './App.css';
-import MatrixRain from './Components/MatrixRain';
-import Profile from './PortfolioContainer/Home/Profile';
+import "./App.css";
+import MatrixRain from "./Components/MatrixRain";
+import Home from "./PortfolioContainer/Home/Home";
 
 function App() {
   return (
-    // <MatrixRain />
-    <Profile />
+    <div className='App'>
+      {/* <MatrixRain /> */}
+      <Home />
+    </div>
   );
 }
 
