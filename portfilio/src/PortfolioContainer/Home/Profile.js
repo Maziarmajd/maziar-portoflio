@@ -66,10 +66,10 @@ export default function Profile() {
               <button className='btn highlighted-btn'>Get My CV</button>
             </a>
           </div>
+        </div>
           <div className='profile-picture'>
             <div className='profile-picture-background'></div>
           </div>
-        </div>
       </div>
     </div>
   );
