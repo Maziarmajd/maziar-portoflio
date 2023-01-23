@@ -38,15 +38,15 @@ export default function Profile() {
                   loop={Infinity}
                   steps={[
                     "Enthusiastic Dev 🌐",
-                    1000,
+                    2000,
                     "FullStack Developer 🧑🏻‍💻",
-                    1000,
+                    2000,
                     "FrontEnd Developer 🖥️",
-                    1000,
+                    2000,
                     "Ui/Ux designer 🎨",
-                    1000,
+                    2000,
                     "React Dev 💻",
-                    1000,
+                    2000,
                   ]}
                 />
               </h1>
