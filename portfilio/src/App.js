@@ -1,12 +1,11 @@
 import "./App.css";
 import MatrixRain from "./Components/MatrixRain";
-import Home from "./PortfolioContainer/Home/Home";
-
+import PortfolioContainer from "./PortfolioContainer/PortfolioContainer";
 function App() {
   return (
     <div className='App'>
       {/* <MatrixRain /> */}
-      <Home />
+      <PortfolioContainer />
     </div>
   );
 }
