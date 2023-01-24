@@ -1,5 +1,5 @@
 import { TOTAL_SCREENS } from "./commonUtils";
-import { of, Subject } from "rxjs";
+import { Subject } from "rxjs";
 
 export default class ScrollService {
   static ScrollHandler = new ScrollService();
@@ -44,7 +44,7 @@ export default class ScrollService {
   checkCurrentScreenUnderViewport =(event) =>{
     if(!event || Object.keys(event).length < 1 )
     return;
-    for( screen of TOTAL_SCREENS){
+    for( let screen of TOTAL_SCREENS){
         let screenFromDOM = document.getElementById(screen.screen_name);
         if (!screenFromDOM)
         continue;
@@ -63,7 +63,7 @@ export default class ScrollService {
             }
             if(fullyVisible){
                 ScrollService.currentScreenBroadCaster.next({
-                    screenInView: screen.screen_name;
+                    screenInView: screen.screen_name
                 });
                 break;
             }
