@@ -67,7 +67,7 @@ export default function Header() {
         <div className="header-logo">
             <span>Maziar Z. Majd</span>
         </div>
-        <div className={(showHeaderOptions)? "headar-options show-hamburger-options": "header-options"}>
+        <div className={(showHeaderOptions)? "header-options show-hamburger-options": "header-options"}>
             {getHeaderOptions()}
         </div>
       </div>
