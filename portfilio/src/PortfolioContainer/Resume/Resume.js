@@ -8,8 +8,7 @@ export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
-
-        /* REUSABLE MINOR COMPONENTS */
+  /* REUSABLE MINOR COMPONENTS */
 
   const ResumeHeading = (props) => {
     <div className='resume-heading'>
@@ -33,7 +32,7 @@ export default function Resume(props) {
       </div>
     </div>;
   };
-      /* STATIC RESUME DATA FOR THE LABELS*/
+  /* STATIC RESUME DATA FOR THE LABELS*/
 
   const resumeBullets = [
     { label: "Education", logoSrc: "education.svg" },
@@ -169,22 +168,21 @@ export default function Resume(props) {
             toDate={projectDetails.duration.toDate}
           />
         ))}
-      </div>,
+      </div>
+      ,
       <div className='resume-screen-container' key='interests'>
-
-        <ResumeHeading 
-        heading="Cinema"
-        description="I've always been a big movie buff and I write critic about movies in my Instagram and LetterBoxd"
+        <ResumeHeading
+          heading='Cinema'
+          description="I've always been a big movie buff and I write critic about movies in my Instagram and LetterBoxd"
         />
-                <ResumeHeading 
-        heading="Football"
-        description="I passionately follow the football from the time I can remember, I am a Manchester United fan, So Glory Glory Man United!"
+        <ResumeHeading
+          heading='Football'
+          description='I passionately follow the football from the time I can remember, I am a Manchester United fan, So Glory Glory Man United!'
         />
-                <ResumeHeading 
-        heading="Gaming"
-        description="I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most."
+        <ResumeHeading
+          heading='Gaming'
+          description='I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most.'
         />
-        
       </div>
     </div>,
   ];
