@@ -8,12 +8,17 @@ export default function Resume(props) {
   const [selectedBulletIndex, setSelectedBulletIndex] = useState(0);
   const [carousalOffSetStyle, setCarousalOffSetStyle] = useState({});
 
+  let fadeInScreenHandler = (screen) => {
+  const fadeInSubscription =
+    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+
   /* REUSABLE MINOR COMPONENTS */
 
   const ResumeHeading = (props) => {
-    <div className='resume-heading'>
-      <div className='resume-main-heading'>
-        <div className='heading-bullet'>
+    return (
+      <div className='resume-heading'>
+        <div className='resume-main-heading'>
+          <div className='heading-bullet'></div>
           <span>{props.heading ? props.heading : ""}</span>
           {props.fromDate && props.toDate ? (
             <div className='heading-date'>
@@ -30,7 +35,7 @@ export default function Resume(props) {
           <span>{props.description ? props.description : ""}</span>
         </div>
       </div>
-    </div>;
+    );
   };
   /* STATIC RESUME DATA FOR THE LABELS*/
 
@@ -43,16 +48,16 @@ export default function Resume(props) {
   ];
 
   const programmingSkillDetails = [
-    { skill: "JavaScript", ratingPercantage: 75 },
-    { skill: "React.js", ratingPercantage: 75 },
-    { skill: "Node.js", ratingPercantage: 70 },
-    { skill: "HTML", ratingPercantage: 80 },
-    { skill: "CSS", ratingPercantage: 80 },
-    { skill: "Rest APIs", ratingPercantage: 60 },
-    { skill: "SQL", ratingPercantage: 50 },
-    { skill: "Teamwork", ratingPercantage: 90 },
-    { skill: "Problem Solving", ratingPercantage: 85 },
-    { skill: "Agile Methodologies", ratingPercantage: 80 },
+    { skill: "JavaScript", ratingPercentage: 75 },
+    { skill: "React.js", ratingPercentage: 75 },
+    { skill: "Node.js", ratingPercentage: 70 },
+    { skill: "HTML", ratingPercentage: 80 },
+    { skill: "CSS", ratingPercentage: 80 },
+    { skill: "Rest APIs", ratingPercentage: 60 },
+    { skill: "SQL", ratingPercentage: 50 },
+    { skill: "Teamwork", ratingPercentage: 90 },
+    { skill: "Problem Solving", ratingPercentage: 85 },
+    { skill: "Agile Methodologies", ratingPercentage: 80 },
   ];
 
   const projectDetails = [
@@ -99,106 +104,152 @@ export default function Resume(props) {
     /* WORK EXPERIENCE */
 
     <div className='resume-screen-container' key='work-experience'>
-      <ResumeHeading
-        heading={"Code Your Future, Manchester, UK"}
-        subHeading={"Full-Stack Developer"}
-        fromDate={"2021"}
-        toDate={"2022"}
-      />
-      <div className='experience-description'>
-        <span className='resume-description-text'>
-          Learned a variety of back-end and front-end programming languages
-          including HTML, CSS, Javascript, Node.js, React, and PostgresSQL.
-        </span>
+      <div className='experience-container'>
+        <ResumeHeading
+          heading={"Code Your Future, Manchester, UK"}
+          subHeading={"Full-Stack Developer"}
+          fromDate={"2021"}
+          toDate={"2022"}
+        />
+        <div className='experience-description'>
+          <span className='resume-description-text'>
+            Learned a variety of back-end and front-end programming languages
+            including HTML, CSS, Javascript, Node.js, React, and PostgresSQL.
+          </span>
+        </div>
+        <div className='experience-description'>
+          <span className='resume-description-text'>
+            -Earned and practised Agile Methodologies in a team environment, and
+            developed my soft skills such as teamwork, resolving issues, pair
+            programming, and presentation
+          </span>
+          <br />
+          <span className='resume-description-text'>
+            -Learned to work with GitHub and Git and terminal for different
+            projects.{" "}
+          </span>
+          <br />{" "}
+          <span className='resume-description-text'>
+            -Participating in weeklyCodewars'Katas improves my problem-solving
+            abilities.{" "}
+          </span>
+          <br />
+          <span className='resume-description-text'>
+            Created responsive design layouts using JavaScript and JQuery,
+            aiding smooth customer experiences.
+          </span>
+          <br />
+          <span className='resume-description-text'>
+            -Working on different projects in a demanding environment and
+            enhanced my aptitude for learning new skills.
+          </span>
+          <br />
+        </div>
       </div>
-      <div className='experience-description'>
-        <span className='resume-description-text'>
-          -Earned and practised Agile Methodologies in a team environment, and
-          developed my soft skills such as teamwork, resolving issues, pair
-          programming, and presentation
-        </span>
-        <br />
-        <span className='resume-description-text'>
-          -Learned to work with GitHub and Git and terminal for different
-          projects.{" "}
-        </span>
-        <br />{" "}
-        <span className='resume-description-text'>
-          -Participating in weeklyCodewars'Katas improves my problem-solving
-          abilities.{" "}
-        </span>
-        <br />
-        <span className='resume-description-text'>
-          Created responsive design layouts using JavaScript and JQuery, aiding
-          smooth customer experiences.
-        </span>
-        <br />
-        <span className='resume-description-text'>
-          -Working on different projects in a demanding environment and enhanced
-          my aptitude for learning new skills.
-        </span>
-      </div>
-      , /* PROGRAMMING SKILLS */
-      <div
-        className='resume-screen-container programming-skills-container'
-        key='programming-skills'
-      >
-        {programmingSkillDetails.map((skill, index) => (
-          <div className='skill-parent' key={index}>
-            <div className='heading-bullet'></div>
-            <span>{skill.skill}</span>
-            <div className='skill-percentage'>
-              <div
-                style={{ width: skill.ratingPercantage + "%" }}
-                className='active-percentage'
-              ></div>
-            </div>
+    </div>,
+
+    /* PROGRAMMING SKILLS */
+    <div
+      className='resume-screen-container programming-skills-container'
+      key='programming-skills'
+    >
+      {programmingSkillDetails.map((skill, index) => (
+        <div className='skill-parent' key={index}>
+          <div className='heading-bullet'></div>
+          <span>{skill.skill}</span>
+          <div className='skill-percentage'>
+            <div
+              style={{ width: skill.ratingPercantage + "%" }}
+              className='active-percentage'
+            ></div>
           </div>
-        ))}
-      </div>
-      , /* PROJECTS */
-      <div className='resume-screen-container' key='projects'>
-        {projectDetails.map((project, index) => (
-          <ResumeHeading
-            key={index}
-            heading={projectDetails.title}
-            subHeading={projectDetails.subheading}
-            description={projectDetails.description}
-            fromDate={projectDetails.duration.fromDate}
-            toDate={projectDetails.duration.toDate}
-          />
-        ))}
-      </div>
-      ,
-      <div className='resume-screen-container' key='interests'>
+        </div>
+      ))}
+    </div>
+
+    ,
+    /* PROJECTS */
+
+    <div className='resume-screen-container' key='projects'>
+      {projectDetails.map((projectDetails, index) => (
         <ResumeHeading
-          heading='Cinema'
-          description="I've always been a big movie buff and I write critic about movies in my Instagram and LetterBoxd"
+          key={index}
+          heading={projectDetails.title}
+          subHeading={projectDetails.subheading}
+          description={projectDetails.description}
+          fromDate={projectDetails.duration.fromDate}
+          toDate={projectDetails.duration.toDate}
         />
-        <ResumeHeading
-          heading='Football'
-          description='I passionately follow the football from the time I can remember, I am a Manchester United fan, So Glory Glory Man United!'
-        />
-        <ResumeHeading
-          heading='Gaming'
-          description='I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most.'
-        />
-      </div>
+      ))}
+    </div>,
+    <div className='resume-screen-container' key='interests'>
+      <ResumeHeading
+        heading='Cinema'
+        description="I've always been a big movie buff and I write critic about movies in my Instagram and LetterBoxd"
+      />
+      <ResumeHeading
+        heading='Football'
+        description='I passionately follow the football from the time I can remember, I am a Manchester United fan, So Glory Glory Man United!'
+      />
+      <ResumeHeading
+        heading='Gaming'
+        description='I like to challenge my reflexes a lot while competing in football games, pushing the rank and having interactive gaming sessions excites me the most.'
+      />
     </div>,
   ];
 
-  let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animation.animations.fadeInScreen(props.id);
+  const handleCarousal = (index) => {
+    let offsetHeight = 360;
+    let newCarousalOffset = {
+      style: { Transform: "translateY(" + index * offsetHeight * -1 + "px)" },
+    };
+    setCarousalOffSetStyle(newCarousalOffset);
+    setSelectedBulletIndex(index);
   };
 
-  const fadeInSubscription =
-    ScrollService.currentScreenFadeIn.subscribe(fadeInScreenHandler);
+  const getBullets = () => {
+    return resumeBullets.map((bullet, index) => (
+      <div
+        onClick={() => handleCarousal(index)}
+        className={
+          index === selectedBulletIndex ? "bullet selected-bullet" : "bullet"
+        }
+        key={index}
+      >
+        <img
+          className='bullet-logo'
+          src={require(`../../assets/Resume/${bullet.logoSrc}`)}
+          alt='oops,,, no internet connection'
+        />
+      </div>
+    ));
+  };
+
+  const getResumeScreen = () => {
+    return (
+      <div
+        style={carousalOffSetStyle.style}
+        className='resume-details-carousal'
+      >
+        {resumeDetails.map((resumeDetail) => resumeDetail)}
+      </div>
+    );
+  };
 
   return (
     <div className='resume-container screen-container' id={props.id || ""}>
       <div className='resume-content'>
         <ScreenHeading title={"Resume"} subHeading={"My Details"} />
+        <div className='resume-card'>
+          <div className='resume-bullets'>
+            <div className='bullet-container'>
+              <div className='bullet-icons'>
+                <div className='bullets'>{getBullets()}</div>
+              </div>
+            </div>
+            <div className='resume-bullet-details'>{getResumeScreen()}</div>
+          </div>
+        </div>
       </div>
     </div>
   );
