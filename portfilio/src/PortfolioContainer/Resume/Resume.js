@@ -26,7 +26,7 @@ export default function Resume(props) {
           <span>{props.heading ? props.heading : ""}</span>
           {props.fromDate && props.toDate ? (
             <div className='heading-date'>
-              {props.fromDate + "_" + props.toDate}
+              {props.fromDate + "-" + props.toDate}
             </div>
           ) : (
             <div></div>
@@ -163,8 +163,8 @@ export default function Resume(props) {
           <span>{skill.skill}</span>
           <div className='skill-percentage'>
             <div
-              style={{ width: skill.ratingPercantage + "%" }}
-              className='active-percentage'
+              style={{ width: skill.ratingPercentage + "%" }}
+              className='active-percentage-bar'
             ></div>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function Resume(props) {
   const handleCarousal = (index) => {
     let offsetHeight = 360;
     let newCarousalOffset = {
-      style: { Transform: "translateY(" + index * offsetHeight * -1 + "px)" },
+      style: { transform: "translateY(" + index * offsetHeight * -1 + "px)" },
     };
     setCarousalOffSetStyle(newCarousalOffset);
     setSelectedBulletIndex(index);
@@ -223,38 +223,42 @@ export default function Resume(props) {
         <img
           className='bullet-logo'
           src={require(`../../assets/Resume/${bullet.logoSrc}`)}
-          alt='oops,,, no internet connection'
+          alt='B'
         />
+        <span className="bullet-label">{bullet.label}</span>
       </div>
     ));
   };
 
-  const getResumeScreen = () => {
+  const getResumeScreens = () => {
     return (
       <div
         style={carousalOffSetStyle.style}
         className='resume-details-carousal'
       >
-        {resumeDetails.map((resumeDetail) => resumeDetail)}
+        {resumeDetails.map((ResumeDetail) => ResumeDetail)}
       </div>
     );
   };
 
   return (
-    <div className='resume-container screen-container' id={props.id || ""}>
-      <div className='resume-content'>
-        <ScreenHeading title={"Resume"} subHeading={"My Details"} />
-        <div className='resume-card'>
-          <div className='resume-bullets'>
-            <div className='bullet-container'>
-              <div className='bullet-icons'>
-                <div className='bullets'>{getBullets()}</div>
-              </div>
+    <div
+      className="resume-container screen-container"
+      id={props.id || ""}
+    >
+      <div className="resume-content">
+        <ScreenHeading title={"Resume"} subHeading={"My formal Bio Details"} />
+        <div className="resume-card">
+          <div className="resume-bullets">
+            <div className="bullet-container">
+              <div className="bullet-icons"></div>
+              <div className="bullets">{getBullets()}</div>
             </div>
-            <div className='resume-bullet-details'>{getResumeScreen()}</div>
           </div>
+
+          <div className="resume-bullet-details">{getResumeScreens()}</div>
         </div>
       </div>
     </div>
   );
-}
+};
