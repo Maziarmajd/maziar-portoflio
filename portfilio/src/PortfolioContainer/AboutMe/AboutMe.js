@@ -5,6 +5,7 @@ import Animation from "../../utilities/Animations";
 import "./AboutMe.css";
 
 export default function AboutMe(props) {
+  
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
     Animation.animations.fadeInScreen(props.id);
