@@ -110,7 +110,7 @@ export default function Resume(props) {
     <div className='resume-screen-container' key='work-experience'>
       <div className='experience-container'>
         <ResumeHeading
-          heading={"Code Your Future, Manchester, UK"}
+          heading={"Code Your Future, Manchester"}
           subHeading={"Full-Stack Developer"}
           fromDate={"2021"}
           toDate={"2022"}
@@ -126,26 +126,6 @@ export default function Resume(props) {
             -Earned and practised Agile Methodologies in a team environment, and
             developed my soft skills such as teamwork, resolving issues, pair
             programming, and presentation
-          </span>
-          <br />
-          <span className='resume-description-text'>
-            -Learned to work with GitHub and Git and terminal for different
-            projects.{" "}
-          </span>
-          <br />{" "}
-          <span className='resume-description-text'>
-            -Participating in weeklyCodewars'Katas improves my problem-solving
-            abilities.{" "}
-          </span>
-          <br />
-          <span className='resume-description-text'>
-            Created responsive design layouts using JavaScript and JQuery,
-            aiding smooth customer experiences.
-          </span>
-          <br />
-          <span className='resume-description-text'>
-            -Working on different projects in a demanding environment and
-            enhanced my aptitude for learning new skills.
           </span>
           <br />
         </div>
