@@ -6,11 +6,12 @@ import "owl.carousel/dist/assets/owl.theme.default.css";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import "./Testimonial.css";
 
 export default function Testimonial(props) {
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeScreen !== props.id) return;
-    Animation.animations.fadeInScreen(props.id);
+    Animations.animations.fadeInScreen(props.id);
   };
 
   const fadeInSubscription =
@@ -50,6 +51,89 @@ export default function Testimonial(props) {
               id='testimonial-carousel'
               {...options}
             >
+              <div className='col-lg-12'>
+                <div className='testi-item'>
+                  <div className='testi-comment'>
+                    <p>
+                      <i className='fa fa-quote-left' /> I taught Maziar in
+                      North West CYF, in the Software Development Programme.
+                      Maziar was a warm, creative, dedicated member of NW4, who
+                      worked well in a team setting. A pleasure to work with! I
+                      wish you all the best, Maziar{" "}
+                      <i className='fa fa-quote-right' />
+                    </p>
+                    <ul className='stars list-unstyled'>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star-half-alt' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='client-info'>
+                    <img
+                      src='img/Testimonial/Sally.png'
+                      alt='no internet connection'
+                    ></img>
+                    <h5>Sally McGrath</h5>
+                    <p>Director Of Education at CodeYourFuture</p>
+                  </div>
+                </div>
+              </div>
+              <div className='col-lg-12'>
+                <div className='testi-item'>
+                  <div className='testi-comment'>
+                    <p>
+                      <i className='fa fa-quote-left' /> Maziar was an excellent
+                      student and a pleasure to teach. He is hardworking, a
+                      great team player and always willing to go above and
+                      beyond. I taught him for both business admin and
+                      accounting and he showed a great keenness for learning. He
+                      is committed and determined to achieve. i would highly
+                      recommend Maziar to any organisation.{" "}
+                      <i className='fa fa-quote-right' />
+                    </p>
+                    <ul className='stars list-unstyled'>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star-half-alt' />
+                      </li>
+                      <li>
+                        <i className='fa fa-star' />
+                      </li>
+                    </ul>
+                  </div>
+                  <div className='client-info'>
+                    <img
+                      src='img/Testimonial/Angela.png'
+                      alt='no internet connection'
+                    ></img>
+                    <h5>Angela Carr</h5>
+                    <p>
+                      Accountant, Teacher, Trainer and Schools Finance
+                      professional
+                    </p>
+                  </div>
+                </div>
+              </div>
               <div className='col-lg-12'>
                 <div className='testi-item'>
                   <div className='testi-comment'>
@@ -138,93 +222,13 @@ export default function Testimonial(props) {
                   </div>
                 </div>
               </div>
-              <div className='col-lg-12'>
-                <div className='testi-item'>
-                  <div className='testi-comment'>
-                    <p>
-                      <i className='fa fa-quote-left' /> I taught Maziar in
-                      North West CYF, in the Software Development Programme.
-                      Maziar was a warm, creative, dedicated member of NW4, who
-                      worked well in a team setting. A pleasure to work with! I
-                      wish you all the best, Maziar{" "}
-                      <i className='fa fa-quote-right' />
-                    </p>
-                    <ul className='stars list-unstyled'>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star-half-alt' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='client-info'>
-                    <img
-                      src='img/Testimonial/Sally.png'
-                      alt='no internet connection'
-                    ></img>
-                    <h5>Sally McGrath</h5>
-                    <p>Director Of Education at CodeYourFuture</p>
-                  </div>
-                </div>
-              </div>
-              <div className='col-lg-12'>
-                <div className='testi-item'>
-                  <div className='testi-comment'>
-                    <p>
-                      <i className='fa fa-quote-left' /> Maziar was an excellent
-                      student and a pleasure to teach. He is hardworking, a
-                      great team player and always willing to go above and
-                      beyond. I taught him for both business admin and
-                      accounting and he showed a great keenness for learning. He
-                      is committed and determined to achieve. i would highly
-                      recommend Maziar to any organisation.{" "}
-                      <i className='fa fa-quote-right' />
-                    </p>
-                    <ul className='stars list-unstyled'>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star-half-alt' />
-                      </li>
-                      <li>
-                        <i className='fa fa-star' />
-                      </li>
-                    </ul>
-                  </div>
-                  <div className='client-info'>
-                    <img
-                      src='img/Testimonial/Angela.png'
-                      alt='no internet connection'
-                    ></img>
-                    <h5>Angela Carr</h5>
-                    <p>
-                      Accountant, Teacher, Trainer and Schools Finance
-                      professional
-                    </p>
-                  </div>
-                </div>
-              </div>
             </OwlCarousel>
           </div>
         </div>
       </section>
+      <div className='footer-image'>
+        <img src='img/Testimonial/shape-bg.png' alt='Phot0 not responding' />
+      </div>
     </div>
   );
 }
