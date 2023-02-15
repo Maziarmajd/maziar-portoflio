@@ -11,8 +11,8 @@ import "./ContactMe.css";
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
-    if (screen.fadeScreen !== props.id) return;
-    Animation.animations.fadeInScreen(props.id);
+    if (screen.fadeInScreen !== props.id) return;
+    Animations.animations.fadeInScreen(props.id);
   };
 
   const fadeInSubscription =
@@ -59,7 +59,7 @@ export default function ContactMe(props) {
   };
 
   return (
-    <div className='main-container' id={props.id || ""}>
+    <div className='main-container fade-in' id={props.id || ""}>
       <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
       <div className='central-form'>
         <div className='col'>
@@ -86,7 +86,7 @@ export default function ContactMe(props) {
         <div className='back-form'>
           <div className='img-back'>
             <h4>Send Your Email Here</h4>
-            <img src={imgBack} alt='image Not Found' />
+            <img src={imgBack} alt='Not Found' />
           </div>
           <form onSubmit={submitForm}>
             <p>{banner}</p>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Resume.css";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
@@ -221,9 +221,16 @@ export default function Resume(props) {
     );
   };
 
+    useEffect(() => {
+    return () => {
+      /* UNSUBSCRIBE THE SUBSCRIPTIONS */
+      fadeInSubscription.unsubscribe();
+    };
+  }, [fadeInSubscription]);
+
   return (
     <div
-      className="resume-container screen-container"
+      className="resume-container screen-container fade-in"
       id={props.id || ""}
     >
       <div className="resume-content">
