@@ -5,6 +5,8 @@ import load1 from "../../../src/images/load2.gif";
 import ScreenHeading from "../../utilities/ScreenHeading/ScreenHeading";
 import ScrollService from "../../utilities/ScrollService";
 import Animations from "../../utilities/Animations";
+import axios from "axios";
+import { toast } from "react-toastify";
 import "./ContactMe.css";
 
 export default function ContactMe(props) {
@@ -32,6 +34,30 @@ export default function ContactMe(props) {
     setMessage(e.target.value);
   };
 
+  const submitForm = async (e) => {
+    e.preventDefault();
+    try {
+      let data = {
+        name,
+        email,
+        message,
+      };
+      setBool(true);
+      const res = await axios.post(`/contact`, data);
+      if (name.length === 0 || email.length === 0 || message.length === 0) {
+        setBanner(res.data.msg);
+        toast.error(res.data.msg);
+        setBool(false);
+      } else if (res.status === 200) {
+        setBanner(res.data.msg);
+        toast.success(res.data.msg);
+        setBool(false);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className='main-container' id={props.id || ""}>
       <ScreenHeading subHeading={"Lets Keep In Touch"} title={"Contact Me"} />
@@ -39,7 +65,10 @@ export default function ContactMe(props) {
         <div className='col'>
           <h2 className='title'>
             {" "}
-            <Typical loop={Infinity} steps={["Get In Touch 📧", 2000]} />
+            <Typical
+              loop={Infinity}
+              steps={["Get In Touch 📧", 2000, "Contact Me 📬", 2000]}
+            />
           </h2>
           <a href='https://www.facebook.com/MaziarMajd13/'>
             <i className='fa fa-facebook-square'></i>
@@ -59,7 +88,7 @@ export default function ContactMe(props) {
             <h4>Send Your Email Here</h4>
             <img src={imgBack} alt='image Not Found' />
           </div>
-          <form>
+          <form onSubmit={submitForm}>
             <p>{banner}</p>
             <label htmlFor='name'>Name</label>
             <input type='text' onChange={handleName} value={name} />
@@ -74,6 +103,13 @@ export default function ContactMe(props) {
               <button type='submit'>
                 Send
                 <i className='fa fa-paper-plane' />
+                {bool ? (
+                  <b className='load'>
+                    <img src={load1} alt='Not responding' />
+                  </b>
+                ) : (
+                  ""
+                )}
               </button>
             </div>
           </form>
