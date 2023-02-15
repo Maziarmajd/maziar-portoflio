@@ -8,6 +8,9 @@ import Animations from "../../utilities/Animations";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "./ContactMe.css";
+import Footer from "../footer/Footer";
+
+
 
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
@@ -115,6 +118,7 @@ export default function ContactMe(props) {
           </form>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
