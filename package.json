@@ -1,0 +1,32 @@
+{
+  "name": "maziar-portoflio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "concurrently": "^7.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.20"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon server.js",
+    "portfilio": "npm start --prefix portfilio",
+    "dev": "concurrently \"npm run  server\"\"npm run portfilio\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix portfilio && npm run build --prefix portfilio"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maziarmajd/maziar-portoflio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Maziarmajd/maziar-portoflio/issues"
+  },
+  "homepage": "https://github.com/Maziarmajd/maziar-portoflio#readme"
+}

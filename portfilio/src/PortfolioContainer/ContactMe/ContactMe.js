@@ -36,7 +36,8 @@ export default function ContactMe(props) {
   const handleMessage = (e) => {
     setMessage(e.target.value);
   };
-
+  console.log(name);
+  
   const submitForm = async (e) => {
     e.preventDefault();
     try {
