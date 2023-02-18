@@ -1,7 +1,7 @@
 const router = require("express").Router();
 
 const nodemailer = require("nodemailer");
-const Mail = require("nodemailer/lib/mailer");
+// const Mail = require("nodemailer/lib/mailer");
 
 router.post("/contact", (req, res) => {
   let data = req.body;
@@ -17,17 +17,17 @@ router.post("/contact", (req, res) => {
     service: "Gmail",
     port: 465,
     auth: {
-      user: "maziarmajd@gmail.com",
+      user: "Maziar.majd84@gmail.com",
       pass: "mahdis13",
     },
   });
-  let maiOptions = {
+  let mailOptions = {
     from: data.email,
-    to: "maziarmajd@gmail.com",
-    subject: `message from $(data.name)`,
+    to: "Maziar.majd84@gmail.com",
+    subject: `message from ${data.name}`,
     html: `
-                
-                <h3>Information</h3>
+               
+                <h3>Informations</h3>
                 <ul>
                 <li>Name: ${data.name}</li>
                 <li>Email: ${data.email}</li>
@@ -38,7 +38,7 @@ router.post("/contact", (req, res) => {
                 `,
   };
 
-  smtpTransporter.sendMail(maiOptions, (error) => {
+  smtpTransporter.sendMail(mailOptions, (error) => {
     try {
       if (error)
         return res.status(400).json({ msg: "please fill all the fields" });

@@ -10,8 +10,6 @@ import { toast } from "react-toastify";
 import "./ContactMe.css";
 import Footer from "../footer/Footer";
 
-
-
 export default function ContactMe(props) {
   let fadeInScreenHandler = (screen) => {
     if (screen.fadeInScreen !== props.id) return;
@@ -37,7 +35,7 @@ export default function ContactMe(props) {
     setMessage(e.target.value);
   };
   console.log(name);
-  
+
   const submitForm = async (e) => {
     e.preventDefault();
     try {
@@ -56,6 +54,10 @@ export default function ContactMe(props) {
         setBanner(res.data.msg);
         toast.success(res.data.msg);
         setBool(false);
+
+        setName("");
+        setEmail("");
+        setMessage("");
       }
     } catch (error) {
       console.log(error);
