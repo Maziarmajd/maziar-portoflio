@@ -77,16 +77,16 @@ export default function ContactMe(props) {
             />
           </h2>
           <a href='https://www.facebook.com/MaziarMajd13/'>
-            <i className='fa fa-facebook-square'></i>
+            <i className='fa fa-facebook-square fa-2x'></i>
           </a>
           <a href='https://www.linkedin.com/in/maziarmajd/'>
-            <i className='fa fa-linkedin-square'></i>
+            <i className='fa fa-linkedin-square fa-2x'></i>
           </a>
           <a href='https://twitter.com/MajdMaziar'>
-            <i className='fa fa-twitter-square'></i>
+            <i className='fa fa-twitter-square fa-2x'></i>
           </a>
           <a href='https://github.com/Maziarmajd'>
-            <i className='fa fa-github-square'></i>
+            <i className='fa fa-github-square fa-2x'></i>
           </a>
         </div>
         <div className='back-form'>
