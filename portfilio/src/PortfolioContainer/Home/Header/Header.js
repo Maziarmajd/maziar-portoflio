@@ -73,7 +73,7 @@ return classes;
             <FontAwesomeIcon className='header-hamburger-bars' icon={faBars} />
           </div>
           <div className='header-logo'>
-            <span>Maziar Z. Majd</span>
+            <span>Maziar Majd</span>
           </div>
           <div
             className={
